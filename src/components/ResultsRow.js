@@ -23,8 +23,9 @@ export default function ResultsRow({ data }) {
             className="flex justify-between items-center border-b cursor-pointer"
             onClick={e => toggleShow(e, data.id)}
           >
-            <div className="w-3/5 px-4">{data.address}</div>
-            <div className="w-2/5 px-4">{data.lot}</div>
+            <div className="w-3/5">{data.address}</div>
+            <div className="w-1/5">{data.lot}</div>
+            <div className="w-1/5">80% full</div>
           </div>
           {hide && data.id === row ? <ResultsData data={data} /> : null}
         </div>

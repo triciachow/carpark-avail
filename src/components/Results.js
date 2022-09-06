@@ -13,9 +13,10 @@ export default function Results({ input }) {
 
   return (
     <>
-      <div className="flex justify-between items-center border-b w-full h-8">
-        <div className="w-3/5 px-4">Location</div>
-        <div className="w-2/5 px-4">Empty Lots</div>
+      <div className="flex justify-between items-center border-b w-full">
+        <div className="w-3/5 font-bold">Location</div>
+        <div className="w-1/5 font-bold">Free Lots</div>
+        <div className="w-1/5 font-bold">Capacity</div>
       </div>
       {filteredData?.map(data => (
         <ResultsRow key={data.id} data={data} />
