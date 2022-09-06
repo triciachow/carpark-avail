@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <div>Carpark Avail</div>
+      <div className="font-bold">Carpark Avail</div>
     </>
   );
 }
