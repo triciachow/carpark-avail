@@ -6,19 +6,19 @@ export default function ResultsRow({ data }) {
   dataArr.push(data);
   // console.log(dataArr);
   const [row, setRow] = useState("");
-  const [hide, setHide] = useState(true);
+  const [show, setShow] = useState(false);
 
   const toggleShow = (e, id) => {
     const selectedRow = dataArr.find(ele => ele.id === id);
     // console.log(selectedRow.id);
     setRow(selectedRow.id);
-    setHide(prev => !prev);
+    setShow(prev => !prev);
   };
 
   return (
     <>
-      {dataArr?.map(data => (
-        <div key={data.id} className="w-full">
+      {dataArr?.map((data, index) => (
+        <div key={index} className="w-full">
           <div
             className="flex justify-between items-center border-b cursor-pointer"
             onClick={e => toggleShow(e, data.id)}
@@ -27,7 +27,7 @@ export default function ResultsRow({ data }) {
             <div className="w-1/5">{data.lot}</div>
             <div className="w-1/5">80% full</div>
           </div>
-          {hide && data.id === row ? <ResultsData data={data} /> : null}
+          {show && data.id === row ? <ResultsData data={data} /> : null}
         </div>
       ))}
     </>

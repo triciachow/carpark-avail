@@ -1,15 +1,16 @@
 import ResultsRow from "./ResultsRow";
-import { data } from "./dummyData";
+import CarparkData from "./CarparkData";
 
 export default function Results({ input }) {
-  const filteredData = data.filter(ele => {
+  const fetchData = CarparkData();
+
+  const filteredData = fetchData?.filter(ele => {
     if (input === "") {
       return ele;
     } else {
       return ele.address.toLowerCase().includes(input);
     }
   });
-  // console.log(filteredData);
 
   return (
     <>
@@ -18,8 +19,8 @@ export default function Results({ input }) {
         <div className="w-1/5 font-bold">Free Lots</div>
         <div className="w-1/5 font-bold">Capacity</div>
       </div>
-      {filteredData?.map(data => (
-        <ResultsRow key={data.id} data={data} />
+      {filteredData?.map((data, index) => (
+        <ResultsRow key={index} data={data} />
       ))}
     </>
   );

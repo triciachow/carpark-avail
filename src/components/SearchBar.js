@@ -6,21 +6,20 @@ export default function SearchBar() {
   const [currentTime, setCurrentTime] = useState("");
   const [query, setQuery] = useState("");
 
-  // Fetch timestamp of updated time
-  useEffect(() => {
+  const fetchTimestamp = async () => {
     const config = {
       method: "get",
       url: "https://api.data.gov.sg/v1/transport/carpark-availability/",
     };
 
-    axios(config)
-      .then(res =>
-        setCurrentTime(
-          // Reformat timing
-          res.data.items[0].timestamp.replace("+08:00", "").replace("T", " ")
-        )
-      )
-      .catch(err => console.log(err));
+    const res = await axios(config);
+    setCurrentTime(
+      res.data.items[0].timestamp.replace("+08:00", "").replace("T", " ")
+    );
+  };
+
+  useEffect(() => {
+    fetchTimestamp();
   }, []);
 
   const handleChange = e => {
@@ -36,7 +35,7 @@ export default function SearchBar() {
           name="search"
           value={query}
           onChange={handleChange}
-          className="border-b w-full p-2 text-center outline-none"
+          className="border-b w-full p-2 text-center outline-none capitalize"
           placeholder="Search a location to begin..."
         />
         <small>Updated at: {currentTime}</small>
