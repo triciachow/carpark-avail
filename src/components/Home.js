@@ -28,7 +28,7 @@ export default function Home() {
             Data retrieved from <a href="https://data.gov.sg/">Data.gov.sg</a>
           </p>
           <p>
-            Disclaimer: <br /> This website has no association with HDB or URA.
+            Disclaimer: <br /> This website has no association with HDB.
             <br />
             This was developed as a personal side project.
           </p>
