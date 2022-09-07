@@ -31,7 +31,7 @@ export default function SearchBar() {
     <>
       <div className="mb-4 w-3/5 text-center">
         <input
-          type="search"
+          type="text"
           name="search"
           value={query}
           onChange={handleChange}
