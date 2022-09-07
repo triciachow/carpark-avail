@@ -24,7 +24,6 @@ export default function SearchBar() {
 
   const handleChange = e => {
     setQuery(e.target.value.toLowerCase());
-    // console.log(query);
   };
 
   return (

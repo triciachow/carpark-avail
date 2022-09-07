@@ -11,7 +11,6 @@ export default function ResultsRow({ data }) {
 
   const toggleShow = (e, id) => {
     const selectedRow = dataArr.find(ele => ele.id === id);
-    // console.log(selectedRow.id);
     setRow(selectedRow.id);
     setShow(prev => !prev);
   };

@@ -1,4 +1,4 @@
-import { ExternalLink, Link } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export default function ResultsData({ data }) {
   return (
