@@ -35,6 +35,7 @@ export default function ResultsRow({ data }) {
               <div className="w-1/6 text-end">
                 {data.carpark_info[0].lots_available}
               </div>
+              {/* Calculate the % */}
               <div className="w-1/6 text-end">
                 {`${Math.round(
                   parseFloat(
