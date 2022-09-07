@@ -42,7 +42,7 @@ export default function SearchBar() {
           className="self-start bg-blue-600 flex items-center justify-center rounded-md gap-x-2 text-white text-sm p-2 my-2 transition ease-in-out hover:bg-blue-800"
           onClick={() => window.location.reload(false)}
         >
-          Refresh
+          Reset
         </button>
       </div>
 

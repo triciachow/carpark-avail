@@ -28,15 +28,15 @@ export default function ResultsRow({ data }) {
           className="flex justify-between items-center border-b cursor-pointer py-1 leading-snug"
           onClick={e => toggleShow(e, data.id)}
         >
-          <div className="w-3/6">{data.address}</div>
+          <div className="w-3/6 mr-4">{data.address}</div>
           {/* Display NA when no data is found */}
           {data?.carpark_info ? (
             <>
-              <div className="w-1/6 text-end">
+              <div className="w-1/6 mr-4">
                 {data.carpark_info[0].lots_available}
               </div>
               {/* Calculate the % */}
-              <div className="w-1/6 text-end">
+              <div className="w-1/6 mr-4">
                 {`${Math.round(
                   parseFloat(
                     data.carpark_info[0].lots_available /
@@ -48,7 +48,7 @@ export default function ResultsRow({ data }) {
             </>
           ) : (
             <>
-              <div className="w-1/6 text-end text-gray-500">-</div>
+              <div className="w-1/6 text-gray-500 mr-4">-</div>
             </>
           )}
           <div className="w-1/6 flex justify-end">
