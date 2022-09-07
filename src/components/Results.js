@@ -16,7 +16,7 @@ export default function Results({ input }) {
     <>
       <small className="text-gray-400 mb-1 text-end">
         {filteredData?.length}
-        {filteredData?.length > 0 ? " results" : " result"} found
+        {filteredData?.length > 1 ? " results" : " result"} found
       </small>
       <div className="bg-white border rounded-lg p-4 drop-shadow-md">
         <div className="flex justify-between items-center border-b w-full">
