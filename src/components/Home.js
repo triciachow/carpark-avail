@@ -7,7 +7,8 @@ export default function Home() {
       <main className="flex flex-col h-full mx-4 my-6 md:mx-auto xl:mx-auto xl:w-2/5 md:w-3/5">
         <div className="gap-y-4 mb-4">
           <h1 className="font-serif text-4xl text-blue-600 font-semibold">
-            HDB / URA <br /> Carpark Availability
+            / HDB
+            <br /> Carpark Availability
           </h1>
           <h2 className="text-sm text-gray-500">
             Real time update every one minute.
