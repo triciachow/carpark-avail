@@ -14,14 +14,19 @@ export default function Results({ input }) {
 
   return (
     <>
-      <div className="flex justify-between items-center border-b w-full">
-        <div className="w-3/5 font-bold">Location</div>
-        <div className="w-1/5 font-bold text-end">Avail</div>
-        <div className="w-1/5 font-bold text-end">Capacity</div>
+      <div className="bg-white border rounded-lg p-4 drop-shadow-md">
+        <div className="flex justify-between items-center border-b w-full">
+          <div className="w-3/6 font-serif text-gray-500">Location</div>
+          <div className="w-1/6 font-serif text-gray-500 text-end">Avail</div>
+          <div className="w-1/6 font-serif text-gray-500 text-end">
+            Capacity
+          </div>
+          <div className="w-1/6 font-serif text-gray-500 text-end"></div>
+        </div>
+        {filteredData?.map((data, index) => (
+          <ResultsRow key={index} data={data} />
+        ))}
       </div>
-      {filteredData?.map((data, index) => (
-        <ResultsRow key={index} data={data} />
-      ))}
     </>
   );
 }

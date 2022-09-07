@@ -48,6 +48,7 @@ export default function CarparkData() {
         ...lots.find(lot => lot.carpark_number === address[i].car_park_no),
       });
     }
+
     setMergeData(combineData);
   }, [address, lots]);
 

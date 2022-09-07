@@ -1,3 +1,4 @@
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import ResultsData from "./ResultsData";
 
@@ -25,17 +26,17 @@ export default function ResultsRow({ data }) {
     <>
       <div className="w-full">
         <div
-          className="flex justify-between items-center border-b cursor-pointer"
+          className="flex justify-between items-center border-b cursor-pointer py-1 leading-snug"
           onClick={e => toggleShow(e, data.id)}
         >
-          <div className="w-3/5">{data.address}</div>
+          <div className="w-3/6">{data.address}</div>
           {/* Display NA when no data is found */}
           {data?.carpark_info ? (
             <>
-              <div className="w-1/5 text-end">
+              <div className="w-1/6 text-end">
                 {data.carpark_info[0].lots_available}
               </div>
-              <div className="w-1/5 text-end">
+              <div className="w-1/6 text-end">
                 {`${Math.round(
                   parseFloat(
                     data.carpark_info[0].lots_available /
@@ -47,9 +48,16 @@ export default function ResultsRow({ data }) {
             </>
           ) : (
             <>
-              <div className="w-1/5 text-end text-gray-500">-</div>
+              <div className="w-1/6 text-end text-gray-500">-</div>
             </>
           )}
+          <div className="w-1/6 flex justify-end">
+            {show ? (
+              <ChevronUp />
+            ) : (
+              <ChevronDown className="hover:animate-bounce" />
+            )}
+          </div>
         </div>
         {show && data.id === row ? <ResultsData data={data} /> : null}
       </div>
