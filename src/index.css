@@ -3,5 +3,10 @@
 @tailwind utilities;
 
 body {
-  background-color: #edf1f4;
+	background-color: #fefefe;
+	color: #111827;
+}
+
+input:focus::placeholder {
+	color: transparent;
 }
