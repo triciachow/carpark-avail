@@ -3,14 +3,14 @@ import SearchBar from "./SearchBar";
 export default function Home() {
 	return (
 		<div className="bg-gray-800 md:py-4">
-			<main className="w-full md:w-3/5 lg:w-4/12 md:rounded-xl mx-auto min-h-screen bg-[#fefefe]">
-				<div className="px-5 bg-hero bg-cover h-[160px] pt-10 pb-5 md:rounded-t-xl">
-					<span className="px-[10px] py-[5px] text-white bg-white/20 font-bold rounded drop-shadow-2xl">
+			<main className="w-full lg:w-4/12 mx-auto min-h-screen bg-[#fefefe]">
+				<div className="p-5 bg-gradient-to-b from-blue-800 to-gray-800 bg-cover h-[180px] justify-center flex flex-col gap-y-2">
+					<span className="w-[120px] px-[10px] py-[5px] text-white bg-white/20 font-bold rounded drop-shadow-2xl">
 						CarParkNow
 					</span>
 
-					<h1 className="text-white font-bold mt-5">
-						Check availability of HDB car park 🇸🇬
+					<h1 className="text-white font-bold">
+						Check HDB Parking Availability
 					</h1>
 				</div>
 				<SearchBar />

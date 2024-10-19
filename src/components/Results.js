@@ -1,6 +1,7 @@
 import ResultsRow from "./ResultsRow";
 import CarparkData from "./CarparkData";
-import carparkicon from "../asset/carpark-icon.svg";
+// import carparkicon from "../asset/carpark-icon.svg";
+import emptystate from "../asset/empty-state.svg";
 
 export default function Results({ input }) {
 	const mergeData = CarparkData();
@@ -17,10 +18,9 @@ export default function Results({ input }) {
 		<>
 			{filteredData?.length < 1 ? (
 				<div className="px-5 w-full mt-10">
-					<img src={carparkicon} alt="Car park icon" className="mx-auto" />
-					<h2 className="text-gray-400 leading-10 text-center">
-						Oh no, we couldn't find any car parks. <br />
-						Please try searching again.
+					<img src={emptystate} alt="Car park icon" className="mx-auto pb-4" />
+					<h2 className="text-gray-400 text-sm leading-8 text-center">
+						No carparks found
 					</h2>
 				</div>
 			) : (

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Results from "./Results";
 import axios from "axios";
-import carparkicon from "../asset/carpark-icon.svg";
+// import carparkicon from "../asset/carpark-icon.svg";
+import emptystate from "../asset/empty-state.svg";
 
 export default function SearchBar() {
 	const [currentTime, setCurrentTime] = useState("");
@@ -29,14 +30,14 @@ export default function SearchBar() {
 
 	return (
 		<>
-			<div className="p-5 flex flex-col gap-y-2 w-full">
+			<div className="p-5 flex flex-col gap-y-1 w-full">
 				<input
 					type="text"
 					name="search"
 					value={query}
 					onChange={handleChange}
-					className="border rounded p-2 outline-none text-sm focus:border-blue-500"
-					placeholder="&#128269; e.g.Bishan"
+					className="border rounded-lg p-3 outline-none text-sm focus:border-blue-500"
+					placeholder="Search for a location in Singapore"
 				/>
 
 				<div className="flex justify-between w-full">
@@ -49,19 +50,19 @@ export default function SearchBar() {
 			{query ? (
 				<div className="px-5 w-full">
 					<button
-						className="w-full bg-blue-700 flex items-center justify-center rounded text-white text-[12px] px-4 py-2 transition ease-in-out hover:bg-blue-800 drop-shadow-sm mb-4"
+						className="w-full bg-gray-800 flex items-center justify-center rounded-lg text-white text-[12px] p-3 transition ease-in-out hover:bg-gray-600 drop-shadow-sm mb-4"
 						onClick={() => window.location.reload(false)}
 					>
-						Reset
+						Clear Search
 					</button>
 					<Results input={query} />
 				</div>
 			) : (
 				<div className="px-5 w-full mt-10">
-					<img src={carparkicon} alt="Car park icon" className="mx-auto" />
+					{/* <img src={carparkicon} alt="Car park icon" className="mx-auto" /> */}
+					<img src={emptystate} alt="Car park icon" className="mx-auto pb-4" />
 					<h2 className="text-gray-400 text-sm leading-8 text-center">
-						Oh no, we couldn't find any car parks. <br />
-						Please try searching again.
+						No carparks found
 					</h2>
 				</div>
 			)}
