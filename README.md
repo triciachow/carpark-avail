@@ -1,6 +1,6 @@
 ## 🔗 Live Demo
 
-https://carparkavailability.netlify.app/
+https://carparknow.netlify.app/
 
 ## Disclaimer
 
